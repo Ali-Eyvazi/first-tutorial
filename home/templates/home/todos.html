@@ -1,0 +1,23 @@
+{%extends 'base.html' %}
+
+
+        
+
+        
+    <div  class="grid-container">
+            {% block show %}
+
+                {%for items in models %}
+                    <div class="grid-item">
+
+                      <a class="text"   href="{% url 'home:details' items.id %}">{{items.title}}</a>
+                    
+
+
+                    </div>
+                {% endfor %}
+                
+        {% endblock %}
+    </div>
+
+

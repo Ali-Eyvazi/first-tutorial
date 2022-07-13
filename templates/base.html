@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'inc/navbar.html' %} 
+{% include 'inc/messages.html' %} 
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+        <style>
+.grid-container {
+  display: grid;
+  row-gap: 30px;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+ 
+  text-align: center;
+}
+            .jumbotron{
+                padding : 20px ;
+                margin-bottom: 20px;
+                background-color: #e9ecef;
+                font-family: Tahoma;
+
+                
+                
+               
+            }
+        </style>
+    
+
+  
+</head>
+
+<body>
+  
+
+    <div class="jumbotron">
+       
+        {% block content %}
+         <div class="grid-container">
+
+
+            {% block show %}
+            
+            {% endblock %}
+
+
+        </div> 
+
+        
+        {% endblock %}
+
+    </div>
+
+
+</body>
+</html>
