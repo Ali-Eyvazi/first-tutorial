@@ -1,23 +1,29 @@
-{%extends 'base.html' %}
+{% extends 'base.html' %} 
 
 
-        
+<div  class="grid-container">
+	{% block show %}
 
-        
-    <div  class="grid-container">
-            {% block show %}
+		{%for items in models %}
+			<div class="grid-item">
 
-                {%for items in models %}
-                    <div class="grid-item">
+				
+			
+				<a class="text"   href="{% url 'home:details' items.id %}">{{items.title}}</a>
 
-                      <a class="text"   href="{% url 'home:details' items.id %}">{{items.title}}</a>
-                    
+			</div>
+		{% endfor %}
+		
+{% endblock %}
 
 
-                    </div>
-                {% endfor %}
-                
-        {% endblock %}
-    </div>
+{%block other%}
+<a class="btn btn-warning" href="{% url 'home:date_creation' %}">Create a date</a>
+
+{% endblock%}
+</div>
+
+
+
 
 

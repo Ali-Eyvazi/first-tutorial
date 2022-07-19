@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 
-<div  class="grid-container">
+
         {% block show %}
-           
+        <div  class="grid-container">
                 <div class="grid-item">
                 {{todo.date_time}} <br>    
-                <h4>{{todo.title}}</h4>
+                <h3>{{todo.title}}</h3> 
                 {{todo.Details}}<br>
                 {{todo.created}}<br>
                       
 
 
                 </div>
-            
+                
+        </div>
+        
         {% endblock %}
 
-        </div>
+        {% block other %}
+        <a class="btn btn-danger" href="{% url 'home:delete' todo.id  %} ">delete</a>
+        <a class="btn btn-primary" href="{% url 'home:update' todo.id  %} ">update</a>
+        {% endblock %}
+
        
