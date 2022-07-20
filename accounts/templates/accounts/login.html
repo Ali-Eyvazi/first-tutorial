@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block other %}
+
+    <form action="" method="post" novalidate>
+            <div class="form-control" >
+
+                   {% csrf_token %}
+                  {{form.as_p}}<br>
+
+            </div>
+        <input  class="btn btn-primary" type="submit" value='Login' >
+    </form>
+{% endblock %} 

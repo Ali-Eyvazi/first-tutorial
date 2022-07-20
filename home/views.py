@@ -1,7 +1,9 @@
+import email
 from pyexpat.errors import messages
+from xml.dom import UserDataHandler
 from django.shortcuts import render,get_object_or_404,redirect
 from django.views import View
-# Create your views here.
+from django.contrib.auth.models import User
 import datetime
 from .models import ToDo
 from django.contrib import messages
@@ -11,8 +13,14 @@ class HomeView(View):
     def get(self,request):
         request.user.username
         date=datetime.datetime.now() 
-        name='Ali'
+
+        if request.user.is_authenticated:
+            name=request.user.first_name
+        else:
+            name='Dear Guest'
+        
         return render(request,'home/home.html',{'name':name,'date':date,})
+        
 
 
 class DetailsView(View):
